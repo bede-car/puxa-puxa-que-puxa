@@ -12,8 +12,15 @@
 
 #include "../include/push_swap.h"
 
-int main(void)
+int main(int arc, char **argv)
 {
-	ft_printf("passei aqui");
-	return (0);
+	if(arc < 2 && argv) // se não passou argumentos
+	{
+		ft_printf("sem argumentos\n");	
+		return(ERROR);
+	}
+	parse(++argv); // analisar argumento por argumento, ignorando o nome do arquivo
+	ft_printf("parseado");
+	//init
+	return (SUCCESS);
 }

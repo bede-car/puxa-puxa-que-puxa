@@ -15,4 +15,9 @@
 
 # include "../libftprintf/source/ft_printf.h"
 
+# define ERROR EXIT_FAILURE
+# define SUCCESS EXIT_SUCCESS
+
+void parse(char **argv);
+
 #endif

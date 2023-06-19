@@ -14,7 +14,7 @@ NAME				=	push_swap
 HEADER				=	./include/push_swap.h
 LIB					=	./libftprintf/libftprintf.a
 PATH_MANDATORY		=   ./source
-SOURCE				= 	main.c
+SOURCE				= 	main.c parse.c
 CFLAG				=	-Wall -Wextra -Werror -I.
 MAKEFLAGS			=	--no-print-directory
 OBJS				=	$(addprefix $(PATH_MANDATORY)/, $(SOURCE:.c=.o)) 
