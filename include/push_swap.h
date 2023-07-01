@@ -20,4 +20,14 @@
 
 void parse(char **argv);
 
+typedef struct s_stack t_stack;
+struct s_stack
+{
+	int number;
+	int order;
+	struct s_stack next;
+	t_stack prev;
+};
+
+
 #endif

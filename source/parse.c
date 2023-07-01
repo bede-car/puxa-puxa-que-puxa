@@ -29,8 +29,8 @@ void parsing_is_digit(char **argv)
 			caracter++;//verifica o proximo
 		}
 		index++;//proxima string
-	}
 	free(arg);
+	}
 }
 
 

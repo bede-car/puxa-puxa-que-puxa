@@ -16,7 +16,7 @@ int main(int arc, char **argv)
 {
 	if(arc < 2 && argv) // se não passou argumentos
 	{
-		ft_printf("sem argumentos\n");	
+		ft_printf("sem argumentos\n");//apenas teste
 		return(ERROR);
 	}
 	parse(++argv); // analisar argumento por argumento, ignorando o nome do arquivo
