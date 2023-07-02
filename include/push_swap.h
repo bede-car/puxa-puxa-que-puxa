@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/06/09 21:10:12 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/01 21:15:14 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 # define ERROR EXIT_FAILURE
 # define SUCCESS EXIT_SUCCESS
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define LONG_ERROR 4300000000
 
 void parse(char **argv);
 
