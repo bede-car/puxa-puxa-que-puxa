@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/01 21:15:14 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 20:04:58 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,29 @@
 # define INT_MIN -2147483648
 # define LONG_ERROR 4300000000
 
-void parse(char **argv);
-
-typedef struct s_stack t_stack;
-struct s_stack
+typedef struct s_data
 {
 	int number;
 	int order;
-	struct s_stack next;
-	t_stack prev;
-};
+	struct s_data *next;
+	struct s_data *prev;
+	// t_data next;
+	// t_data prev;
+}t_data;
+
+// typedef struct s_data t_data;
+
+void	parse(char **argv);
+void	validate_digits(char **argv);
+// void parsing_sorted(t_data *a);
+// void parsing_order(t_data *a);
+void	check_duplicated(t_data *a);
+t_data *init_data(char **argv);
+void	destroy_data(t_data *struc);
+void	insert_node(t_data **a, t_data *addr);
+long	ft_atol(const char *string);
+t_data *new_node(int number);
+
 
 
 #endif
