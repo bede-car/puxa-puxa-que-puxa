@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 20:04:58 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:05:15 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ typedef struct s_data
 
 // typedef struct s_data t_data;
 
+//void	parse(int argc, char **argv)
 void	parse(char **argv);
 void	validate_digits(char **argv);
-// void parsing_sorted(t_data *a);
-// void parsing_order(t_data *a);
+void 	check_sorting(t_data *a);
+void	indexing_order(t_data *a);
 void	check_duplicated(t_data *a);
 t_data *init_data(char **argv);
 void	destroy_data(t_data *struc);

@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 20:06:57 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:05:30 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,27 @@ int	main(int arc, char **argv)
 	if (arc < 2 && argv)
 		return (ERROR);
 	parse(++argv);
+	//parse(++argc, ++argv);
 	return (SUCCESS);
 }
 
+//void	parse(int argc, char **argv)
 void	parse(char **argv)
 {
 	t_data	*stack_a;
 
 	validate_digits(argv);
-	ft_printf("validate digits success\n");
 	stack_a = init_data(argv);
 	check_duplicated(stack_a);
-	parsing_order(a);
-// parsing_sorted(a);
-//sort
+	indexing_order(stack_a);
+	check_sorting(stack_a);
+	while (stack_a)
+	{
+		ft_printf("numero: %d e seu index: %d \n", stack_a->number, stack_a->order);
+		stack_a = stack_a->next;
+	}
+	// if (argc <= 5)
+	// 	little_sort(stack_a);
+	// else
+	// 	big_sort(stack_a);	
 }

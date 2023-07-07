@@ -6,13 +6,13 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 20:55:02 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 20:03:32 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:02:18 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void check_duplicated(t_data *a)
+void	check_duplicated(t_data *a)
 {
 	t_data *temporary;
 	
@@ -33,13 +33,37 @@ void check_duplicated(t_data *a)
 		a = a->next;	
 	}
 }
-// void parsing_order(t_stack *a)
-// {
-// 	//maio	
-// }
-// void parsing_sorted(t_stack *a)
-// {
-// }
+
+void	indexing_order(t_data *a)
+{
+	t_data *temporary;
+	
+	while(a)
+	{
+		temporary = a;
+		while (temporary->prev)
+			temporary = temporary->prev;		
+		while (temporary)
+		{
+			if (a->number > temporary->number)
+				a->order++;
+			temporary = temporary->next;
+		}
+		a = a->next;
+	}
+}
+
+void	check_sorting(t_data *a)
+{
+	while(a->next)
+	{
+		if (a->next->order - a->order == 1)
+			a = a->next;
+		else
+			return ;			
+	}
+	exit(ERROR);
+}
 void	error_validate(char *argument)
 {
 	ft_printf("Error\n");
@@ -74,12 +98,3 @@ void	validate_digits(char **argv)
 		free(argument);
 	}
 }
-
-	// parse
-	// (recebe argumentos do terminal)
-	// 	aceitar:
-	// 		somente números [done]
-	//		atoi -> char : int
-	//		(int máx | int mín)
-	// 		não duplicados
-	// 		não ordenados
