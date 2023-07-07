@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 20:55:02 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 11:32:55 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/07 14:04:23 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	check_duplicated(t_data *a)
 {
-	t_data *temporary;
-	
-	while(a->next)
+	t_data	*temporary;
+
+	while (a->next)
 	{
 		temporary = a->next;
 		while (temporary)
@@ -27,23 +27,23 @@ void	check_duplicated(t_data *a)
 				while (a->prev)
 					a = a->prev;
 				destroy_linked_data(a);
-				exit(ERROR);		
+				exit(ERROR);
 			}		
 			temporary = temporary->next;
 		}
-		a = a->next;	
+		a = a->next;
 	}
 }
 
 void	index_order(t_data *a)
 {
-	t_data *temporary;
-	
-	while(a)
+	t_data	*temporary;
+
+	while (a)
 	{
 		temporary = a;
 		while (temporary->prev)
-			temporary = temporary->prev;		
+			temporary = temporary->prev;
 		while (temporary)
 		{
 			if (a->number > temporary->number)
@@ -56,18 +56,19 @@ void	index_order(t_data *a)
 
 void	check_sorting(t_data *a)
 {
-	while(a->next)
+	while (a->next)
 	{
 		if (a->next->order - a->order == 1)
 			a = a->next;
 		else
-			return ;			
+			return ;
 	}
-	while(a->prev)
+	while (a->prev)
 		a = a->prev;
 	destroy_linked_data(a);
 	exit(SUCCESS);
 }
+
 void	error_validate(char *argument)
 {
 	ft_printf("Error\n");

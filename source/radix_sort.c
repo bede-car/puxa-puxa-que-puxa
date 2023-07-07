@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   big_sort.c                                         :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:58:57 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 22:22:33 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/07 13:46:16 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	big_sort(t_data *stack_a)
+void	radix_sort(int argc, t_data *stack_a, t_data *stack_b)
 {
-	
+	(void)argc;
+	(void)stack_a;
+	(void)stack_b;
+	ft_printf("são %d argumentos, logo ordenar com radix\n", argc);
 }

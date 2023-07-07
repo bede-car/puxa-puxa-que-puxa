@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 18:58:22 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 11:37:09 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/07 14:04:27 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	destroy_linked_data(t_data *struc)
 {
 	t_data	*temporary;
-	
+
 	while (struc)
 	{
 		temporary = struc->next;
@@ -69,9 +69,9 @@ t_data	*init_linked_data(char **argv)
 		number = ft_atol(argv[index]);
 		if (number == LONG_ERROR)
 		{
-			ft_printf("Error");
+			ft_printf("Error\n");
 			destroy_linked_data(head_stack);
-			exit(ERROR) ;
+			exit(ERROR);
 		}
 		address = new_node(number);
 		insert_node(&head_stack, address);

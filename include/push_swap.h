@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 11:33:03 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/07 14:45:08 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,30 @@
 
 typedef struct s_data
 {
-	int number;
-	int order;
-	struct s_data *next;
-	struct s_data *prev;
+	struct s_data	*next;
+	struct s_data	*prev;
+	int				number;
+	int				order;
 }t_data;
 
 /* Main */
 t_data	*parse(char **argv);
 void	push_swap(int argc, t_data *stack_a, t_data *stack_b);
-
+int		main(int argc, char **argv);
 /* Parser */
 void	validate_digits(char **argv);
 void	check_duplicated(t_data *a);
 void	index_order(t_data *a);
-void 	check_sorting(t_data *a);
-
+void	check_sorting(t_data *a);
 /* Init */
-t_data *init_linked_data(char **argv);
-t_data *new_node(int number);
+t_data	*init_linked_data(char **argv);
+t_data	*new_node(int number);
 void	insert_node(t_data **a, t_data *addr);
 void	destroy_linked_data(t_data *struc);
-
-/* Utils */
+/* Atol */
 long	ft_atol(const char *string);
-// void	little_sort(t_data *stack_a);
-// void	big_sort(t_data *stack_a);
-
+/* Sort */
+void	small_sort(int argc, t_data *stack_a, t_data *stack_b);
+void	radix_sort(int argc, t_data *stack_a, t_data *stack_b);
+void	sort_two(t_data *stack_a, t_data *stack_b);
 #endif
