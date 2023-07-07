@@ -6,13 +6,11 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 18:58:22 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 22:02:59 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:37:51 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-// <tipo_retorno> <nome_função>(<argumentos_função>)
-// <t_data *> <new_node> (<int number>)
 
 void	destroy_data(t_data *struc)
 {

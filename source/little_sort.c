@@ -6,8 +6,13 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:58:55 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 21:59:03 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:25:27 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	little_sort(t_data *stack_a)`
+{
+	t_data stack_b;
+}

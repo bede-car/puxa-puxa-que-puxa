@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/06 22:05:30 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/06 22:58:28 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,22 @@
 // 	return (SUCCESS);
 // }
 
-int	main(int arc, char **argv)
+int	main(int argc, char **argv)
 {
-	if (arc < 2 && argv)
+	t_data *stack_a;
+	t_data *stack_b;
+	
+	if (argc < 2 && argv)
 		return (ERROR);
-	parse(++argv);
-	//parse(++argc, ++argv);
+	stack_a = parse(++argv);
+	stack_b = NULL;
+	push_swap(--argc, stack_a, stack_b);
+	destroy_data(stack_a);
+	destroy_data(stack_b);
 	return (SUCCESS);
 }
 
-//void	parse(int argc, char **argv)
-void	parse(char **argv)
+t_data	*parse(char **argv)
 {
 	t_data	*stack_a;
 
@@ -49,13 +54,5 @@ void	parse(char **argv)
 	check_duplicated(stack_a);
 	indexing_order(stack_a);
 	check_sorting(stack_a);
-	while (stack_a)
-	{
-		ft_printf("numero: %d e seu index: %d \n", stack_a->number, stack_a->order);
-		stack_a = stack_a->next;
-	}
-	// if (argc <= 5)
-	// 	little_sort(stack_a);
-	// else
-	// 	big_sort(stack_a);	
+	return(stack_a);
 }
