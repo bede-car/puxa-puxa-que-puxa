@@ -6,24 +6,11 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 18:58:22 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 14:04:27 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 18:42:57 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	destroy_linked_data(t_data *struc)
-{
-	t_data	*temporary;
-
-	while (struc)
-	{
-		temporary = struc->next;
-		free(struc);
-		struc = temporary;
-	}
-	struc = (NULL);
-}
 
 t_data	*new_node(int number)
 {
@@ -70,7 +57,7 @@ t_data	*init_linked_data(char **argv)
 		if (number == LONG_ERROR)
 		{
 			ft_printf("Error\n");
-			destroy_linked_data(head_stack);
+			destroy_linked_data_a(head_stack);
 			exit(ERROR);
 		}
 		address = new_node(number);

@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 14:45:08 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 18:34:02 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,16 @@ void	check_sorting(t_data *a);
 t_data	*init_linked_data(char **argv);
 t_data	*new_node(int number);
 void	insert_node(t_data **a, t_data *addr);
-void	destroy_linked_data(t_data *struc);
+/* Destroy */
+void	destroy_linked_data_a(t_data *struc);
+void	destroy_linked_data_b(t_data *struc);
 /* Atol */
 long	ft_atol(const char *string);
 /* Sort */
 void	small_sort(int argc, t_data *stack_a, t_data *stack_b);
 void	radix_sort(int argc, t_data *stack_a, t_data *stack_b);
-void	sort_two(t_data *stack_a, t_data *stack_b);
+void	sort_two(t_data *stack_a);
+/* Moves */
+void swap_a(t_data *stack_a);
+
 #endif

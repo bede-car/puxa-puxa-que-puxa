@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 20:55:02 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/07 14:04:23 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 18:42:29 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_duplicated(t_data *a)
 				ft_printf("Error\n");
 				while (a->prev)
 					a = a->prev;
-				destroy_linked_data(a);
+				destroy_linked_data_a(a);
 				exit(ERROR);
 			}		
 			temporary = temporary->next;
@@ -65,7 +65,7 @@ void	check_sorting(t_data *a)
 	}
 	while (a->prev)
 		a = a->prev;
-	destroy_linked_data(a);
+	destroy_linked_data_a(a);
 	exit(SUCCESS);
 }
 
