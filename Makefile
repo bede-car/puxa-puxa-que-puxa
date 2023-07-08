@@ -6,7 +6,7 @@
 #    By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 21:48:55 by bede-car          #+#    #+#              #
-#    Updated: 2023/07/07 14:04:16 by bede-car         ###   ########.fr        #
+#    Updated: 2023/07/08 16:03:03 by bede-car         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME				=	push_swap
 HEADER				=	./include/push_swap.h
 LIB					=	./libftprintf/libftprintf.a
 PATH_MANDATORY		=   ./source
-SOURCE				= 	parse.c ft_atol.c init.c push_swap.c small_sort.c radix_sort.c
+SOURCE				= 	parse.c ft_atol.c init.c main.c small_sort.c radix_sort.c
 CFLAG				=	-Wall -Wextra -Werror -I. -g3
 MAKEFLAGS			=	--no-print-directory
 OBJS				=	$(addprefix $(PATH_MANDATORY)/, $(SOURCE:.c=.o)) 
