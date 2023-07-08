@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:58:55 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 18:28:37 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 20:03:52 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	small_sort(int argc, t_data *stack_a, t_data *stack_b)
 
 void	sort_two(t_data *stack_a)
 {
-	swap_a(stack_a);
+	operations(SA, stack_a, NULL);
 }

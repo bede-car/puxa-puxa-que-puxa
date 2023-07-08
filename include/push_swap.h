@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 18:34:02 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 20:02:02 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 # define LONG_ERROR 4300000000
+# define SA 'S' + 'A'
+# define SB 'S' + 'B'
+# define SS 'S' + 'S'
+# define PA 'P' + 'A'
+# define PB 'P' + 'B'
+# define RA 'R' + 'A'
+# define RB 'R' + 'B'
+# define RR 'R' + 'R'
+# define RRA 'R' + 'R' + 'A'
+# define RRB 'R' + 'R' + 'B'
+# define RRR 'R' + 'R' + 'R'
 
 typedef struct s_data
 {
@@ -32,7 +43,7 @@ typedef struct s_data
 /* Main */
 t_data	*parse(char **argv);
 void	push_swap(int argc, t_data *stack_a, t_data *stack_b);
-int		main(int argc, char **argv);
+void	operations(int move, t_data *stack_a, t_data *stack_b);
 /* Parser */
 void	validate_digits(char **argv);
 void	check_duplicated(t_data *a);
@@ -52,6 +63,8 @@ void	small_sort(int argc, t_data *stack_a, t_data *stack_b);
 void	radix_sort(int argc, t_data *stack_a, t_data *stack_b);
 void	sort_two(t_data *stack_a);
 /* Moves */
-void swap_a(t_data *stack_a);
+int swap_a(t_data *stack_a);
+int swap_b(t_data *stack_b);
+int double_swap(t_data *stack_a, t_data *stack_b);
 
 #endif
