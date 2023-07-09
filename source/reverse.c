@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 20:04:57 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 02:03:12 by bede-car         ###   ########.fr       */
+/*   Created: 2023/07/09 01:00:33 by bede-car          #+#    #+#             */
+/*   Updated: 2023/07/09 02:04:55 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	rotate_a(t_data *stack_a)
+int	reverse_rotate_a(t_data *stack_a)
 {
 	int		swap_number;
 	int		swap_order;
@@ -20,32 +20,12 @@ int	rotate_a(t_data *stack_a)
 
 	if (!stack_a || !stack_a->next)
 		return (ERROR);
-	swap_number = stack_a->number;
-	swap_order = stack_a->order;
 	temporary = stack_a;
 	while (temporary->next)
-	{
-		temporary->number = temporary->next->number;
-		temporary->order = temporary->next->order;
 		temporary = temporary->next;
-	}
-	temporary->number = swap_number;
-	temporary->order = swap_order;
-	return (SUCCESS);
-}
-
-int	rotate_b(t_data *stack_b)
-{
-	int		swap_number;
-	int		swap_order;
-	t_data	*temporary;
-
-	if (!stack_b || !stack_b->prev)
-		return (ERROR);
-	swap_number = stack_b->number;
-	swap_order = stack_b->order;
-	temporary = stack_b;
-	while (temporary->prev)
+	swap_number = temporary->number;
+	swap_order = temporary->order;
+	while (temporary->prev != stack_a)
 	{
 		temporary->number = temporary->prev->number;
 		temporary->order = temporary->prev->order;
@@ -56,11 +36,35 @@ int	rotate_b(t_data *stack_b)
 	return (SUCCESS);
 }
 
-int	double_rotate(t_data *stack_a, t_data *stack_b)
+int	reverse_rotate_b(t_data *stack_b)
+{
+	int		swap_number;
+	int		swap_order;
+	t_data	*temporary;
+
+	if (!stack_b || !stack_b->prev)
+		return (ERROR);
+	temporary = stack_b;
+	while (temporary->prev)
+		temporary = temporary->prev;
+	swap_number = temporary->number;
+	swap_order = temporary->order;
+	while (temporary->next != stack_b)
+	{
+		temporary->number = temporary->next->number;
+		temporary->order = temporary->next->order;
+		temporary = temporary->next;
+	}
+	temporary->number = swap_number;
+	temporary->order = swap_order;
+	return (SUCCESS);
+}
+
+int	double_reverse_rotate(t_data *stack_a, t_data *stack_b)
 {
 	if (!stack_a || !stack_a->next || !stack_b || !stack_b->prev)
 		return (ERROR);
-	rotate_a(stack_a);
-	rotate_b(stack_b);
+	reserve_rotate_a(stack_a);
+	reverse_rotate_b(stack_b);
 	return (SUCCESS);
 }

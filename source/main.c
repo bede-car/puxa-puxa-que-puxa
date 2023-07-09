@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 21:08:00 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 02:10:34 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	operations(int shift, t_data *stack_a, t_data *stack_b)
 {
-
 	if (shift == SA && swap_a(stack_a) == 0)
 		ft_printf("sa\n");
 	else if (shift == SB && swap_b(stack_b) == 0)
@@ -25,18 +24,18 @@ void	operations(int shift, t_data *stack_a, t_data *stack_b)
 		ft_printf("pa\n");
 	else if (shift == PB && push_b(stack_a, stack_b) == 0)
 		ft_printf("pb\n");
-	// else if (shift == RA && ft_rotate_a(a) == 0)
-	// 	ft_printf("ra\n");
-	// else if (shift == RB && ft_rotate_b(b) == 0)
-	// 	ft_printf("rb\n");
-	// else if (shift == RRA && ft_reverse_rotate_a(a) == 0)
-	// 	ft_printf("rra\n");
-	// else if (shift == RRB && ft_reverse_rotate_b(b) == 0)
-	// 	ft_printf("rrb\n");
-	// else if (shift == RR && ft_rotate_rotate(a, b) == 0)
-	// 	ft_printf("rr\n");
-	// else if (shift == RRR && ft_reverse_rotate_rotate(a, b) == 0)
-	// 	ft_printf("rrr\n");
+	else if (shift == RA && rotate_a(stack_a) == 0)
+		ft_printf("ra\n");
+	else if (shift == RB && rotate_b(stack_b) == 0)
+		ft_printf("rb\n");
+	else if (shift == RR && double_rotate(stack_a, stack_b) == 0)
+		ft_printf("rr\n");
+	else if (shift == RRA && reverse_rotate_a(stack_a) == 0)
+		ft_printf("rra\n");
+	else if (shift == RRB && reverse_rotate_b(stack_b) == 0)
+		ft_printf("rrb\n");
+	else if (shift == RRR && double_reverse_rotate(stack_a, stack_a) == 0)
+		ft_printf("rrr\n");
 	(void)stack_b;
 }
 
@@ -79,7 +78,6 @@ void print_my_sort(t_data *stack_a, t_data *stack_b)
 	ft_printf("\n");
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_data	*stack_a;
@@ -91,6 +89,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	push_swap(--argc, stack_a, stack_b);
 	print_my_sort(stack_a, stack_b);
+	//apagar essa função
 	destroy_linked_data_a(stack_a);
 	destroy_linked_data_b(stack_b);
 	return (SUCCESS);

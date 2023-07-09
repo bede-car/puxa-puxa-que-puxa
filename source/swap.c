@@ -6,15 +6,15 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 13:08:50 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 20:03:46 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 00:55:58 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int swap_a(t_data *stack_a)
+int	swap_a(t_data *stack_a)
 {
-	int swap;
+	int	swap;
 
 	if (!stack_a || !stack_a->next)
 		return (ERROR);
@@ -27,9 +27,9 @@ int swap_a(t_data *stack_a)
 	return (SUCCESS);
 }
 
-int swap_b(t_data *stack_b)
+int	swap_b(t_data *stack_b)
 {
-	int swap;
+	int	swap;
 
 	if (!stack_b || !stack_b->prev)
 		return (ERROR);
@@ -42,8 +42,10 @@ int swap_b(t_data *stack_b)
 	return (SUCCESS);
 }
 
-int double_swap(t_data *stack_a, t_data *stack_b)
+int	double_swap(t_data *stack_a, t_data *stack_b)
 {
+	if (!stack_a || !stack_a->next || !stack_b || !stack_b->prev)
+		return (ERROR);
 	swap_a(stack_a);
 	swap_b(stack_b);
 	return (SUCCESS);
