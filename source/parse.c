@@ -6,66 +6,66 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 20:55:02 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 18:42:29 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 17:14:24 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	check_duplicated(t_data *a)
+void	check_duplicated(t_data *stack_a)
 {
 	t_data	*temporary;
 
-	while (a->next)
+	while (stack_a->next)
 	{
-		temporary = a->next;
+		temporary = stack_a->next;
 		while (temporary)
 		{
-			if (a->number == temporary->number)
+			if (stack_a->number == temporary->number)
 			{
 				ft_printf("Error\n");
-				while (a->prev)
-					a = a->prev;
-				destroy_linked_data_a(a);
+				while (stack_a->prev)
+					stack_a = stack_a->prev;
+				destroy_linked_data_a(stack_a);
 				exit(ERROR);
 			}		
 			temporary = temporary->next;
 		}
-		a = a->next;
+		stack_a = stack_a->next;
 	}
 }
 
-void	index_order(t_data *a)
+void	index_order(t_data *stack_a)
 {
 	t_data	*temporary;
 
-	while (a)
+	while (stack_a)
 	{
-		temporary = a;
+		temporary = stack_a;
 		while (temporary->prev)
 			temporary = temporary->prev;
 		while (temporary)
 		{
-			if (a->number > temporary->number)
-				a->order++;
+			if (stack_a->number > temporary->number)
+				stack_a->order++;
 			temporary = temporary->next;
 		}
-		a = a->next;
+		stack_a = stack_a->next;
 	}
 }
 
-void	check_sorting(t_data *a)
+void	check_sorting(t_data *stack_a)
 {
-	while (a->next)
+	while (stack_a->next)
 	{
-		if (a->next->order - a->order == 1)
-			a = a->next;
+		if (stack_a->next->order - stack_a->order == 1)
+			stack_a = stack_a->next;
 		else
 			return ;
 	}
-	while (a->prev)
-		a = a->prev;
-	destroy_linked_data_a(a);
+	while (stack_a->prev)
+		stack_a = stack_a->prev;
+	destroy_linked_data_a(stack_a);
 	exit(SUCCESS);
 }
 

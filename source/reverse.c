@@ -6,26 +6,26 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 01:00:33 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 14:52:36 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 17:26:29 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	reverse_rotate_a(t_data *stack_a)
+int	reverse_rotate_a(t_data **stack_a)
 {
 	int		swap_number;
 	int		swap_order;
 	t_data	*temporary;
 
-	if (!stack_a || !stack_a->next)
+	if (!stack_a || !(*stack_a)->next)
 		return (ERROR);
-	temporary = stack_a;
+	temporary = *stack_a;
 	while (temporary->next)
 		temporary = temporary->next;
 	swap_number = temporary->number;
 	swap_order = temporary->order;
-	while (temporary->prev != stack_a)
+	while (temporary->prev != *stack_a)
 	{
 		temporary->number = temporary->prev->number;
 		temporary->order = temporary->prev->order;
@@ -36,20 +36,20 @@ int	reverse_rotate_a(t_data *stack_a)
 	return (SUCCESS);
 }
 
-int	reverse_rotate_b(t_data *stack_b)
+int	reverse_rotate_b(t_data **stack_b)
 {
 	int		swap_number;
 	int		swap_order;
 	t_data	*temporary;
 
-	if (!stack_b || !stack_b->prev)
+	if (!stack_b || !(*stack_b)->prev)
 		return (ERROR);
-	temporary = stack_b;
+	temporary = *stack_b;
 	while (temporary->prev)
 		temporary = temporary->prev;
 	swap_number = temporary->number;
 	swap_order = temporary->order;
-	while (temporary->next != stack_b)
+	while (temporary->next != *stack_b)
 	{
 		temporary->number = temporary->next->number;
 		temporary->order = temporary->next->order;
@@ -60,9 +60,9 @@ int	reverse_rotate_b(t_data *stack_b)
 	return (SUCCESS);
 }
 
-int	double_reverse_rotate(t_data *stack_a, t_data *stack_b)
+int	double_reverse_rotate(t_data **stack_a, t_data **stack_b)
 {
-	if (!stack_a || !stack_a->next || !stack_b || !stack_b->prev)
+	if (!stack_a || !(*stack_a)->next || !stack_b || !(*stack_b)->prev)
 		return (ERROR);
 	reverse_rotate_a(stack_a);
 	reverse_rotate_b(stack_b);

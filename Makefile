@@ -6,7 +6,7 @@
 #    By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/08 21:48:55 by bede-car          #+#    #+#              #
-#    Updated: 2023/07/09 14:51:53 by bede-car         ###   ########.fr        #
+#    Updated: 2023/07/09 16:06:46 by bede-car         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,6 @@ fclean : clean
 re : fclean all
 
 val :
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} ${shell shuf -i 0-50}
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} ${shell shuf -i 0-2}
 
 .PHONY:	all libftprintf clean fclean re
