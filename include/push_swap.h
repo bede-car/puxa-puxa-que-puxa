@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 17:11:12 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 18:02:09 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,16 @@ void	sort_three(t_data **stack_a);
 void	sort_five(t_data **stack_a, t_data **stack_b);
 int		find_index(t_data **stack_a, int index);
 /* Moves */
-int swap_a(t_data **stack_a);
-int swap_b(t_data **stack_b);
-int double_swap(t_data **stack_a, t_data **stack_b);
-int push_a(t_data **stack_a, t_data **stack_b);
-int push_b(t_data **stack_a, t_data **stack_b);
-int rotate_a(t_data **stack_a);
-int rotate_b(t_data **stack_a);
-int double_rotate(t_data **stack_a, t_data **stack_b);
-int reverse_rotate_a(t_data **stack_a);
-int reverse_rotate_b(t_data **stack_b);
-int double_reverse_rotate(t_data **stack_a, t_data **stack_b);
+int		swap_a(t_data **stack_a);
+int		swap_b(t_data **stack_b);
+int		double_swap(t_data **stack_a, t_data **stack_b);
+int		push_a(t_data **stack_a, t_data **stack_b);
+int		push_b(t_data **stack_a, t_data **stack_b);
+int		rotate_a(t_data **stack_a);
+int		rotate_b(t_data **stack_a);
+int		double_rotate(t_data **stack_a, t_data **stack_b);
+int		reverse_rotate_a(t_data **stack_a);
+int		reverse_rotate_b(t_data **stack_b);
+int		double_reverse_rotate(t_data **stack_a, t_data **stack_b);
 
 #endif

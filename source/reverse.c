@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 01:00:33 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 17:26:29 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 17:32:17 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	reverse_rotate_a(t_data **stack_a)
 		temporary = temporary->next;
 	swap_number = temporary->number;
 	swap_order = temporary->order;
-	while (temporary->prev != *stack_a)
+	while (temporary != *stack_a)
 	{
 		temporary->number = temporary->prev->number;
 		temporary->order = temporary->prev->order;
@@ -49,7 +49,7 @@ int	reverse_rotate_b(t_data **stack_b)
 		temporary = temporary->prev;
 	swap_number = temporary->number;
 	swap_order = temporary->order;
-	while (temporary->next != *stack_b)
+	while (temporary != *stack_b)
 	{
 		temporary->number = temporary->next->number;
 		temporary->order = temporary->next->order;

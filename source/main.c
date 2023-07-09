@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 17:14:54 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 17:29:11 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void print_my_sort(t_data *stack_a, t_data *stack_b)
 		ft_printf("\nstack b--> ");
 		while (stack_b)
 	{
-		ft_printf("%d", stack_b->number);
+		ft_printf(" %d", stack_b->number);
 		stack_b = stack_b->prev; 
 	}
 	ft_printf("\n");
