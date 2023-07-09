@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 17:29:11 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:27:21 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,6 @@ void	push_swap(int argc, t_data **stack_a, t_data **stack_b)
 	(void)stack_b;
 }
 
-void print_my_sort(t_data *stack_a, t_data *stack_b)
-{
-	ft_printf("\nstack a-->");
-		while (stack_a)
-	{
-		ft_printf(" %d", stack_a->number);
-		stack_a = stack_a->next; 
-	}
-		ft_printf("\nstack b--> ");
-		while (stack_b)
-	{
-		ft_printf(" %d", stack_b->number);
-		stack_b = stack_b->prev; 
-	}
-	ft_printf("\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_data	*stack_a;
@@ -87,8 +70,6 @@ int	main(int argc, char **argv)
 	stack_a = parse(++argv);
 	stack_b = NULL;
 	push_swap(--argc, &stack_a, &stack_b);
-	print_my_sort(stack_a, stack_b);
-	//apagar essa função
 	destroy_linked_data_a(stack_a);
 	destroy_linked_data_b(stack_b);
 	return (SUCCESS);

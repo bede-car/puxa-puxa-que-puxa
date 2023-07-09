@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:58:57 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 20:20:49 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 20:32:33 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	radix_sort(int argc, t_data **stack_a, t_data **stack_b)
 	while (bit_position < limit) // already_sort(stack_a) == ERROR 
 	{
 		compare = 0;
-		while(compare < argc - 1)
+		while(compare < argc)
 		{
 			if(((*stack_a)->order >> bit_position & 1 ) == 0)
 				operations(PB, stack_a, stack_b);
