@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:58:55 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 14:57:20 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 15:53:23 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ void	small_sort(int argc, t_data *stack_a, t_data *stack_b)
 		sort_two(stack_a);
 	if (argc == 3)
 		sort_three(stack_a);
-	// 	ft_printf("são %d argumentos\n", argc);
-	// if (argc == 4)
-	// 	//sort_four();
-	// 	ft_printf("são %d argumentos\n", argc);	
-	// if (argc == 5)
+	// if (argc << 3 && arg <= 5)
 	// 	//sort_five();
 	// 	ft_printf("são %d argumentos\n", argc);
 	(void)stack_a;
@@ -36,38 +32,23 @@ void	sort_two(t_data *stack_a)
 
 void	sort_three(t_data *stack_a)
 {
-	t_data *temporary;
-
-	temporary = stack_a;
-	while(temporary->next->order - temporary->order != 1 && temporary->order != 0)
+	while(already_sort(stack_a) == ERROR)
 	{
-		if (temporary->order == 0) // 0 2 1 
-			operations(RRA, temporary, NULL); // 0 2 1 --> 1 0 2
-		if (temporary->order == 1) // 1 0 2 ou 1 2 0
-		{
-			if (temporary->next->order == 0) // 1 0 2
-				operations(SA, temporary, NULL); // 1 0 2 --> 0 1 2
-			else // 1 2 0
-				operations(RRA, temporary, NULL); // 1 2 0 --> 0 1 2
-		}
-		if (temporary->order == 2) // 2 0 1 ou 2 1 0
-		{
-			if (temporary->next->order == 0) // 2 0 1
-				operations(RA, temporary, NULL); // 2 0 1 --> 0 1 2
-			else // 2 1 0
-				operations(RRA, temporary, NULL); // 2 1 0 --> 0 2 1
-		}
-		temporary = temporary->next;
+		if (stack_a->order > stack_a->next->order)
+			operations(SA, stack_a, NULL);
+		else
+			operations(RRA, stack_a, NULL);
 	}
 }
 
-void	sort_three(t_data *stack_a)
+int already_sort(t_data *stack)
 {
-	t_data *temporary;
-
-	temporary = stack_a;
-	while(temporary->next->order - temporary->order != 1 && temporary->order != 0)
+	while (stack->next)
 	{
-
+		if(stack->order < stack->next->order)
+			stack = stack->next;
+		else
+			return (ERROR);
 	}
+	return (SUCCESS);
 }
