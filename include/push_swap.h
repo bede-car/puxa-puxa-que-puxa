@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 21:51:05 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/08 20:02:02 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/08 21:02:24 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ void	sort_two(t_data *stack_a);
 int swap_a(t_data *stack_a);
 int swap_b(t_data *stack_b);
 int double_swap(t_data *stack_a, t_data *stack_b);
+int push_a(t_data *stack_a, t_data *stack_b);
+int push_b(t_data *stack_a, t_data *stack_b);
 
 #endif
