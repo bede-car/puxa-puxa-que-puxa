@@ -6,7 +6,7 @@
 /*   By: bede-car <bede-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 20:56:16 by bede-car          #+#    #+#             */
-/*   Updated: 2023/07/09 02:10:34 by bede-car         ###   ########.fr       */
+/*   Updated: 2023/07/09 02:29:32 by bede-car         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	operations(int shift, t_data *stack_a, t_data *stack_b)
 		ft_printf("rrb\n");
 	else if (shift == RRR && double_reverse_rotate(stack_a, stack_a) == 0)
 		ft_printf("rrr\n");
-	(void)stack_b;
 }
 
 t_data	*parse(char **argv)
